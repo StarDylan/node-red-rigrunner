@@ -1,5 +1,5 @@
 {
-  "name": "@starink/node-red-rigrunner",
+  "name": "@stardylan/node-red-rigrunner",
   "version": "1.0.0",
   "description": "Node RED Contribution interfacing with the RigRunner 10100i",
   "dependencies": {
