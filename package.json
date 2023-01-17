@@ -1,6 +1,6 @@
 {
   "name": "@stardylan/node-red-rigrunner",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Node RED Contribution interfacing with the RigRunner 10100i",
   "dependencies": {
     "axios": "^1.2.2",
@@ -14,5 +14,17 @@
       "rigrunner-set": "rigrunner/rigrunner-set.js",
       "rigrunner-server" : "rigrunner/rigrunner-server.js"
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StarDylan/node-red-rigrunner.git"
+  },
+  "license": "Apache-2.0",
+  "bugs":{
+    "url" : "https://github.com/StarDylan/node-red-rigrunner/issues",
+    "email" : "dylan@starink.com"
+  },
+  "engines": {
+    "node": ">=12.0.0"
   }
 }
