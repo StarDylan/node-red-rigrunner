@@ -1,0 +1,93 @@
+[
+    {
+        "id": "b8f71c930badf733",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "4a5bfd4b9a8a18ef",
+        "type": "inject",
+        "z": "b8f71c930badf733",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "x": 70,
+        "y": 320,
+        "wires": [
+            [
+                "0d761f9672487bd6"
+            ]
+        ]
+    },
+    {
+        "id": "0d761f9672487bd6",
+        "type": "rigrunner-get",
+        "z": "b8f71c930badf733",
+        "name": "Get Rigrunner Stats",
+        "server": "8554ce7adb9ee8d4",
+        "x": 280,
+        "y": 320,
+        "wires": [
+            [
+                "2409efa3e8b88e7c"
+            ]
+        ]
+    },
+    {
+        "id": "2409efa3e8b88e7c",
+        "type": "function",
+        "z": "b8f71c930badf733",
+        "name": "Get second output's power usage",
+        "func": "msg.payload = msg.payload.supplyVoltage * msg.payload.outputAmps[1]\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 580,
+        "y": 320,
+        "wires": [
+            [
+                "b1a33d1a1267175f"
+            ]
+        ]
+    },
+    {
+        "id": "b1a33d1a1267175f",
+        "type": "debug",
+        "z": "b8f71c930badf733",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 840,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "8554ce7adb9ee8d4",
+        "type": "rigrunner",
+        "host": "192.168.137.21"
+    }
+]

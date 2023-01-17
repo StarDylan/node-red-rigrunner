@@ -1,0 +1,39 @@
+<script type="text/javascript">
+    RED.nodes.registerType('rigrunner-get',{
+        category: 'function',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value:""},
+            server: {value:"", type:"rigrunner-server"}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "file.png",
+        label: function() {
+            return this.name||"Rigrunner Get";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="rigrunner-get">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+
+    <label for="node-input-server"><i class="fa fa-tag"></i> Rigrunner Server</label>
+    <input type="text" id="node-input-server">
+</script>
+
+<script type="text/html" data-help-name="rigrunner-get">
+    <p>A node that gets all the Rigrunner's Sensors</p>
+    <p>Internal Temp is temperature in Fahrenheit</p>
+    <code>
+        { <br>
+            outputAmps: array[10], <br>
+            supplyVoltage: 13.23, <br>
+            internalTemp: 80.8, <br>
+            internalTemp2: 83.8 <br>
+        }
+    </code>
+</script>

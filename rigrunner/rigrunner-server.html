@@ -1,0 +1,18 @@
+<script type="text/javascript">
+    RED.nodes.registerType('rigrunner-server',{
+        category: 'config',
+        defaults: {
+            host: {value:"",required:true},
+        },
+        label: function() {
+            return this.host;
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="rigrunner-server">
+    <div class="form-row">
+        <label for="node-config-input-host"><i class="fa fa-bookmark"></i> Rigrunner Hostname</label>
+        <input type="text" id="node-config-input-host" placeholder="192.168.1.1">
+    </div>
+</script>

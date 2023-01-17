@@ -1,0 +1,66 @@
+<script type="text/javascript">
+    RED.nodes.registerType('rigrunner-set',{
+        category: 'function',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value:""},
+            server: {value:"", type:"rigrunner-server"},
+            rigrunnerdeviceidx: {value: 0, validate:RED.validators.regex(/(10|[1-9])/)},
+            devicevalue: {value: "on"}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "file.png",
+        label: function() {
+            return this.name||"Rigrunner Set Device #" + this.rigrunnerdeviceidx + " to " + this.devicevalue;
+        },
+        oneditprepare: function () {
+            $("#node-input-devicevalue").typedInput({
+                types: [
+                    {
+                        value: "on",
+                        options: [
+                            { value: "on", label: "Turn On"},
+                            { value: "off", label: "Turn Off"},
+                        ]
+                    }
+                ]
+            });
+
+            $("#node-input-rigrunnerdeviceidx").typedInput({
+                type:"num",
+                types:["num"]
+            })
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="rigrunner-set">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+
+    
+    <div class="form-row">
+        <label for="node-input-server"><i class="fa fa-tag"></i> Rigrunner Server</label>
+        <input type="text" id="node-input-server">
+    </div>
+
+    <div class="form-row">
+        <label for="node-input-rigrunnerdeviceidx"><i class="fa fa-tag"></i> Rigrunner Device Index (1-10)</label>
+        <input type="text" id="node-input-rigrunnerdeviceidx" placeholder="1">
+    </div>
+    <div class="form-row">
+        <label for="node-input-devicevalue"><i class="fa fa-tag"></i> Rigrunner Device state</label>
+        <input type="text" id="node-input-devicevalue">
+
+    </div>
+</script>
+
+<script type="text/html" data-help-name="rigrunner-set">
+    <p>A node that can set each output</p>
+    <p>Upon success it will send the recieved message forward, on failure it will
+        emit an error.
+    </p>
+</script>
