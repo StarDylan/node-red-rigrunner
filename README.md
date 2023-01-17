@@ -1,10 +1,6 @@
 # node-red-rigrunner
 
-Rigrunner-10100i controller and status reader for Node-RED.
-
-## Background
-
-This node was created because there was no other node that allows reading status and setting outputs in Node-RED
+[Rigrunner-10010i](http://www.westmountainradio.com/product_info.php?products_id=rr_10010i) controller and status reader for Node-RED.
 
 ## Installation
 
