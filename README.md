@@ -2,10 +2,6 @@
 
 [Rigrunner-10100i](http://www.westmountainradio.com/product_info.php?products_id=rr_10010i) controller and status reader for Node-RED.
 
-## Background
-
-This node was created because there was no other node that allows reading status and setting outputs in Node-RED
-
 ## Installation
 
 To install the node from the command-line, you can use the following command from within your user data directory (by default, ```$HOME/.node-red```):
